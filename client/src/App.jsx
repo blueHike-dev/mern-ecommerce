@@ -1,18 +1,58 @@
 import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Outlet,
+  Navigate,
+} from "react-router-dom";
 import Header from "./components/Header";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
+import { useSelector } from "react-redux";
+import Home from "./pages/Home";
 
 const App = () => {
-  return;
-  <>
-    <Router>
+  const user = useSelector((state) => state.user.currentUser);
+
+  const Layout = () => {
+    <div>
       <Header />
-      <Main />
+      <div>
+        <Outlet />
+      </div>
       <Footer />
-    </Router>
-  </>;
+    </div>;
+  };
+
+  const ProtectedRoute = ({ children }) => {
+    if (!user) {
+      return <Navigate to="/login" />;
+    }
+
+    return children;
+  };
+
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: (
+        <ProtectedRoute>
+          <Layout />
+        </ProtectedRoute>
+      ),
+      children: [
+        {
+          path: "/",
+          element: <Home />,
+        },
+        {
+          path: "/cart",
+        },
+      ],
+    },
+  ]);
+
+  return;
 };
 
 export default App;

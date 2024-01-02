@@ -1,9 +1,0 @@
-{
-  "HOME" : "/",
-  "PRODUCTLIST": "/products/:category",
-  "PRODUCT" : "/product/:id",
-  "CART" : "/cart",
-  "SUCCESS" : "/success",
-  "LOGIN" : "/login",
-  "REGISTER" : "success"
-}
