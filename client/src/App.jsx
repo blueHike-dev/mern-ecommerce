@@ -17,21 +17,11 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route path="/products/:category">
-          <ProductList />
-        </Route>
-        <Route path="/product/:id">
-          <Product />
-        </Route>
-        <Route path="/cart">
-          <Cart />
-        </Route>
-        <Route path="success">
-          <Success />
-        </Route>
+        <Route path="/" exact Component={Home} />
+        <Route path="/products/:category" Component={ProductList} />
+        <Route path="/product/:id" Component={Product} />
+        <Route path="/cart" Component={Cart} />
+        <Route path="/success" Component={Success} />
       </Routes>
     </Router>
   );
