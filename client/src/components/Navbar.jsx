@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components"
-import { BsSearch } from "react-icons/bs";
+import { BsSearch, BsCart3 } from "react-icons/bs";
 import  { mobile } from '../responsive';
-
+import {Link  } from "react-router-dom";
+ 
 const Navbar = () => {
   return <Container>
     <Wrapper>
@@ -21,6 +22,9 @@ const Navbar = () => {
       <Right>
         <MenuItem>SIGN UP</MenuItem>
         <MenuItem>SIGN IN</MenuItem>
+        <Link to='/cart'>
+          <BsCart3 style={{color: "black", fontWeight: 800}}/>
+        </Link>
       </Right>
     </Wrapper>
   </Container>;
@@ -46,6 +50,9 @@ align-items: center;
 const Language = styled.div`
 font-size: 14px;
 cursor: pointer;
+background-color: #1f4903;
+padding: 6px;
+color: white;
 ${mobile({display: 'none'})}
 `
 const SearchContainer = styled.div`
@@ -72,14 +79,17 @@ const Right = styled.div`
   flex: 1;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
+  gap: 20px;
   ${mobile({flex : 2, justifyContent: "center"})}
 `
 const MenuItem = styled.div`
   font-size:14px;
   cursor: pointer;
   margin-left: 25px;
+  margin-right: 25px;
   ${mobile({ fontSize: "12px", marginLeft: "10px"})}
 `
+
 
 export default Navbar;
