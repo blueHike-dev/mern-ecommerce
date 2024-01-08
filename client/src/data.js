@@ -18,3 +18,25 @@ export const sliderItems = [
     bg : "fbf0f4",
     img:"https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg"},
 ]
+
+export const categories = [
+    {
+     id:7,
+     title: "White Gold Plated Princess",
+     img:"https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg",
+    cat: "women"
+    },
+     {
+     id:8,
+     title:"Pierced Owl Rose Gold Plated Stainless Steel Double", 
+       img:"https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_.jpg",
+    cat:"coat"
+},
+    {
+        id:9,
+        title:"WD 2TB Elements Portable External Hard Drive - USB 3.0 ",
+        img:"https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg", 
+    cat:"jeans"
+},
+   
+]
